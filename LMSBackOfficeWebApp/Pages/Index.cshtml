@@ -1,0 +1,41 @@
+﻿@page
+@{
+    ViewData["Title"] = "Bonus Types Listing";
+}
+@model LMSBackOfficeWebApp.Pages.IndexModel
+@using System.Data;
+@using NonFactors.Mvc.Grid;
+@{
+    ViewBag.Title = "Listing of All Bonus Types";
+    //WebGrid grid = new WebGrid();
+}
+
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Listing of  <a href="https://docs.microsoft.com/aspnet/core">LMS Different Bonus Types</a>.</p>
+
+@*     @grid.GetHtml(
+            htmlAttributes: new { @id = "WebGrid" },
+            columns: grid.Columns(
+            grid.Column("BonusType_Code", "Bonus Type Code"),
+            grid.Column("Bonus_Type", "Bonus Type"),
+            grid.Column("Bonus_Percentage", "Bonus Percentage"),
+            grid.Column("Bonus_Description", "Description"),
+            grid.Column("Is_Active", "Active")
+            )
+            ) *@
+
+
+   @* @(Html.Grid(Model.dtBonusTypes.Rows.Cast<DataRow>())
+        .Build(columns =>
+        {
+            foreach (DataColumn column in Model.dtBonusTypes.Columns)
+            {
+                columns.Add(model => model[column.ColumnName]).Titled(column.ColumnName);
+            }
+        })
+    )*@
+   
+</div>

@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33627.172
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LMSBackOfficeAPI", "LMSBackOfficeAPI\LMSBackOfficeAPI.csproj", "{E56E97E9-46B6-4BB5-8279-BBECD624899A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LMSBackOfficeWebApp", "LMSBackOfficeWebApp\LMSBackOfficeWebApp.csproj", "{71C9644E-B516-48E5-825A-1FB6A55E84A0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LMSBackOfficeGateway", "LMSBackOfficeGateway\LMSBackOfficeGateway.csproj", "{E2DDEAF8-C11F-4F06-B0F7-5AD25077FF6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LMSBackOfficeDAL", "LMSBackOfficeDAL\LMSBackOfficeDAL.csproj", "{522CEADD-07E3-4D97-B27B-F0AEBE234CEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LMSBackOfficeWebApplication", "LMSBackOfficeWebApplication\LMSBackOfficeWebApplication.csproj", "{DE1B270B-9F27-43C1-8C6A-A58227C20F96}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E56E97E9-46B6-4BB5-8279-BBECD624899A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E56E97E9-46B6-4BB5-8279-BBECD624899A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E56E97E9-46B6-4BB5-8279-BBECD624899A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E56E97E9-46B6-4BB5-8279-BBECD624899A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71C9644E-B516-48E5-825A-1FB6A55E84A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71C9644E-B516-48E5-825A-1FB6A55E84A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71C9644E-B516-48E5-825A-1FB6A55E84A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71C9644E-B516-48E5-825A-1FB6A55E84A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2DDEAF8-C11F-4F06-B0F7-5AD25077FF6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2DDEAF8-C11F-4F06-B0F7-5AD25077FF6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2DDEAF8-C11F-4F06-B0F7-5AD25077FF6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2DDEAF8-C11F-4F06-B0F7-5AD25077FF6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{522CEADD-07E3-4D97-B27B-F0AEBE234CEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{522CEADD-07E3-4D97-B27B-F0AEBE234CEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{522CEADD-07E3-4D97-B27B-F0AEBE234CEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{522CEADD-07E3-4D97-B27B-F0AEBE234CEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE1B270B-9F27-43C1-8C6A-A58227C20F96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE1B270B-9F27-43C1-8C6A-A58227C20F96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE1B270B-9F27-43C1-8C6A-A58227C20F96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE1B270B-9F27-43C1-8C6A-A58227C20F96}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C75DE9FB-F308-4FCB-8BBC-D9B488F4B488}
+	EndGlobalSection
+EndGlobal

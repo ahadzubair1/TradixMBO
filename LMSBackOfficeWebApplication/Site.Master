@@ -1,0 +1,641 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="LMSBackOfficeWebApplication.SiteMaster" %>
+
+<%@ Register Src="~/MemberTopUp.ascx" TagPrefix="uc1" TagName="MemberTopUp" %>
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tradix : Learning Management BackOffice System</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <link href="~/Content/fonts/tabler-icons.min.css" rel="stylesheet" />
+    <link href="~/Content/fonts/feather.css" rel="stylesheet" />
+    <link href="~/Content/fonts/fontawesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/css/dropzone.min.css" asp-append-version="true" />
+    <link href="Content/fonts/material.css" rel="stylesheet" />
+    <link href="~/Content/style-preset.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <script type="text/javascript">
+
+        //function HideSideBar(message) {
+        //    debugger;
+        //    if ($("#sidebar") != null || $("#sidebar") != undefined) {
+        //        $("#sidebar").hide();
+        //    }
+        //}
+
+        function ShowMessage(message) {
+            debugger;
+            var messageLabel = document.getElementById("bodyMessage");
+            messageLabel.innerHTML = message;
+
+            $("#sidebar").hide();
+            $("#membershipExpiryeModal").modal("show");
+            $('body').addClass('modal-open');
+            $("#membershipExpiryeModal").removeClass("hide");
+        }
+
+        function Close() {
+            var lblMessage = document.getElementById("bodyMessage");
+            lblMessage.innerHTML = "";
+
+            $("#membershipExpiryeModal").modal('hide');
+            $('body').removeClass('modal-open');
+            $('.modal-backdrop').remove();
+            $("#membershipExpiryeModal").removeClass("show");
+            // $("#messageModal").addClass("hide"); 
+        }
+    </script>
+    <%--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#changePasswordLink').click(function (e) {
+            e.preventDefault(); // Prevent default action of anchor tag
+            
+            // Call server-side method using AJAX
+            $.ajax({
+                type: "POST",
+                url: window.location.href, // Same page URL
+                data: { action: 'ChangePassword' }, // Pass an action parameter
+                success: function (response) {
+                    // Handle success response from server
+                    console.log(response); // Log the response to console
+                },
+                error: function (xhr, status, error) {
+                    // Handle error response from server
+                    console.error(xhr.responseText); // Log the error to console
+                }
+            });
+        });
+    });
+</script>--%>
+
+  <script type="text/javascript">
+      function handleClick() {
+          // Call the server-side function asynchronously
+          __doPostBack('<%= AIcopyTradingLi.UniqueID %>', '');
+      }
+  </script>
+
+</head>
+<body>
+
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+
+        </asp:ScriptManager>
+
+        <header class="pc-header">
+            <div class="header-wrapper">
+                <!-- [Mobile Media Block] start -->
+                <div class="me-auto pc-mob-drp">
+                    <ul class="list-unstyled">
+                        <!-- ======= Menu collapse Icon ===== -->
+                        <li class="pc-h-item pc-sidebar-collapse d-none">
+                            <a href="#" class="pc-head-link ms-0" id="sidebar-hide">
+                                <i class="ti ti-menu-2"></i>
+                            </a>
+                        </li>
+                        <li class="pc-h-item pc-sidebar-popup">
+                            <a href="#" class="pc-head-link ms-0" id="mobile-collapse">
+                                <i class="ti ti-menu-2"></i>
+                            </a>
+                        </li>
+                        <%--<li class="dropdown pc-h-item">
+                            <div class="form-group m-0 p-r-10">
+                                <div class="input-group">
+                                    <input type="text" class="form-control shadow-none" placeholder="Search...">
+                                    <button class="btn btn-dark btn-group-vertical"><i data-feather="search"></i></button>
+                                </div>
+                            </div>
+                        </li>--%>
+                        <li class="pc-h-item">
+                            <a class="btn btn-tr btn-shadow btn-sm text-nowrap" id="btnTopup" data-bs-toggle="modal" data-bs-target="#exampleModal" role="button" href="#" title="Credit Wallet Topup"><i class="material-icons-two-tone text-white">attach_money</i> Top Up</a>
+                        </li>
+                        <li class="pc-h-item wallet-balance">
+                            <span><i class="ti ti-wallet h6"></i><span class="text-yellow-300">Credit Wallet: $<span id="creditbalance" runat="server"></span></span></span>
+                            <span><i class="ti ti-wallet h6"></i><span class="text-info">Bonus Wallet: $<span id="bonusbalance" runat="server"></span></span></span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- [Mobile Media Block end] -->
+                <div class="profile-options">
+                    <ul class="list-unstyled">
+                        <li class="dropdown pc-h-item">
+                            <a
+                                class="pc-head-link dropdown-toggle arrow-none me-0"
+                                data-bs-toggle="dropdown"
+                                href="#"
+                                role="button"
+                                aria-haspopup="false"
+                                aria-expanded="false">
+                                <svg class="pc-icon">
+                                    <use xlink:href="#custom-sun-1"></use>
+                                </svg>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end pc-h-dropdown">
+                                <a href="#!" class="dropdown-item" onclick="layout_change('dark')">
+                                    <svg class="pc-icon">
+                                        <use xlink:href="#custom-moon"></use>
+                                    </svg>
+                                    <span>Dark</span>
+                                </a>
+                                <a href="#!" class="dropdown-item" onclick="layout_change('light')">
+                                    <svg class="pc-icon">
+                                        <use xlink:href="#custom-sun-1"></use>
+                                    </svg>
+                                    <span>Light</span>
+                                </a>
+                                <a href="#!" class="dropdown-item" onclick="layout_change_default()">
+                                    <svg class="pc-icon">
+                                        <use xlink:href="#custom-setting-2"></use>
+                                    </svg>
+                                    <span>Default</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="pc-h-item">
+                            <a href="#" class="pc-head-link me-0" data-bs-toggle="offcanvas" data-bs-target="#announcement" aria-controls="announcement">
+                                <svg class="pc-icon">
+                                    <use xlink:href="#custom-flash"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="dropdown pc-h-item">
+                            <a
+                                class="pc-head-link dropdown-toggle arrow-none me-0 disabled"
+                                data-bs-toggle="dropdown"
+                                href="#"
+                                role="button"
+                                aria-haspopup="false"
+                                aria-expanded="false">
+                                <svg class="pc-icon">
+                                    <use xlink:href="#custom-notification"></use>
+                                </svg>
+                                <span class="badge bg-success pc-h-badge">3</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-notification dropdown-menu-end pc-h-dropdown">
+                                <div class="dropdown-header d-flex align-items-center justify-content-between">
+                                    <h5 class="m-0">Notifications</h5>
+                                    <a href="#!" class="btn btn-link btn-sm">Mark all read</a>
+                                </div>
+                                <div class="dropdown-body text-wrap header-notification-scroll position-relative" style="max-height: calc(100vh - 215px)">
+                                    <p class="text-span">Today</p>
+                                    <div class="card mb-2">
+                                        <div class="card-body">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0">
+                                                    <svg class="pc-icon text-primary">
+                                                        <use xlink:href="#custom-layer"></use>
+                                                    </svg>
+                                                </div>
+                                                <div class="flex-grow-1 ms-3">
+                                                    <span class="float-end text-sm text-muted">2 min ago</span>
+                                                    <h5 class="text-body mb-2">UI/UX Design</h5>
+                                                    <p class="mb-0">
+                                                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                    type and scrambled it to make a type
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2">
+                                        <div class="card-body">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0">
+                                                    <svg class="pc-icon text-primary">
+                                                        <use xlink:href="#custom-sms"></use>
+                                                    </svg>
+                                                </div>
+                                                <div class="flex-grow-1 ms-3">
+                                                    <span class="float-end text-sm text-muted">1 hour ago</span>
+                                                    <h5 class="text-body mb-2">Message</h5>
+                                                    <p class="mb-0">Lorem Ipsum has been the industry's standard dummy text ever since the 1500.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="text-span">Yesterday</p>
+                                    <div class="card mb-2">
+                                        <div class="card-body">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0">
+                                                    <svg class="pc-icon text-primary">
+                                                        <use xlink:href="#custom-document-text"></use>
+                                                    </svg>
+                                                </div>
+                                                <div class="flex-grow-1 ms-3">
+                                                    <span class="float-end text-sm text-muted">2 hour ago</span>
+                                                    <h5 class="text-body mb-2">Forms</h5>
+                                                    <p class="mb-0">
+                                                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                    type and scrambled it to make a type
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2">
+                                        <div class="card-body">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0">
+                                                    <svg class="pc-icon text-primary">
+                                                        <use xlink:href="#custom-user-bold"></use>
+                                                    </svg>
+                                                </div>
+                                                <div class="flex-grow-1 ms-3">
+                                                    <span class="float-end text-sm text-muted">12 hour ago</span>
+                                                    <h5 class="text-body mb-2">Challenge invitation</h5>
+                                                    <p class="mb-2"><span class="text-dark">Jonny aber</span> invites to join the challenge</p>
+                                                    <button class="btn btn-sm btn-outline-secondary me-2">Decline</button>
+                                                    <button class="btn btn-sm btn-primary">Accept</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2">
+                                        <div class="card-body">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0">
+                                                    <svg class="pc-icon text-primary">
+                                                        <use xlink:href="#custom-security-safe"></use>
+                                                    </svg>
+                                                </div>
+                                                <div class="flex-grow-1 ms-3">
+                                                    <span class="float-end text-sm text-muted">5 hour ago</span>
+                                                    <h5 class="text-body mb-2">Security</h5>
+                                                    <p class="mb-0">
+                                                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                    type and scrambled it to make a type
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center py-2">
+                                    <a href="#!" class="link-danger">Clear all Notifications</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="dropdown pc-h-item header-user-profile">
+                            <a
+                                class="pc-head-link dropdown-toggle arrow-none me-0"
+                                data-bs-toggle="dropdown"
+                                href="#"
+                                role="button"
+                                aria-haspopup="false"
+                                data-bs-auto-close="outside"
+                                aria-expanded="false">
+                                <img src="Content/images/user/avatar-2.jpg" alt="user-image" class="user-avtar" />
+                            </a>
+                            <div class="dropdown-menu dropdown-user-profile dropdown-menu-end pc-h-dropdown">
+                                <div class="dropdown-header d-flex align-items-center justify-content-between">
+                                    <h5 class="m-0">Profile</h5>
+                                </div>
+                                <div class="dropdown-body">
+                                    <div class="profile-notification-scroll position-relative" style="max-height: calc(100vh - 225px)">
+                                        <div class="card">
+                                            <div class="card-body py-3">
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <h5 class="mb-0 d-inline-flex align-items-center">
+                                                        <svg class="pc-icon text-muted me-2">
+                                                            <use xlink:href="#custom-notification-outline"></use></svg>Notification</h5>
+                                                    <div class="form-check form-switch form-check-reverse m-0">
+                                                        <input class="form-check-input f-18" type="checkbox" role="switch" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="text-span">Manage</p>
+                                        <a href="#" class="dropdown-item">
+                                            <span>
+                                                <svg class="pc-icon text-muted me-2">
+                                                    <use xlink:href="#custom-setting-outline"></use>
+                                                </svg>
+                                                <span>Privacy Settings</span>
+                                            </span>
+                                        </a>
+                                        <a href="#" class="dropdown-item">
+                                            <span>
+                                                <svg class="pc-icon text-muted me-2">
+                                                    <use xlink:href="#custom-share-bold"></use>
+                                                </svg>
+                                                <span>Share</span>
+                                            </span>
+                                        </a>
+                                        <a href="ResetPassword.aspx" class="dropdown-item" id="changePasswordLink">
+                                            <span>
+                                                <svg class="pc-icon text-muted me-2">
+                                                    <use xlink:href="#custom-lock-outline"></use>
+                                                </svg>
+                                                <span>Change Password</span>
+                                            </span>
+                                        </a>
+                                    
+
+                                        <a href="Login.aspx" class="dropdown-item">
+                                            <span>
+                                                <svg class="pc-icon text-muted me-2">
+                                                    <use xlink:href="#custom-logout"></use>
+                                                </svg>
+                                                <span>Logout</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <!-- [ Sidebar Menu ] start -->
+        <nav class="pc-sidebar">
+            <div class="anim-bg-wrap">
+                <div class="anim-bg"></div>
+                <div class="anim-bg bg2"></div>
+                <div class="anim-bg bg3"></div>
+            </div>
+            <div class="navbar-wrapper">
+                <div class="m-header">
+                    <!-- ========   Change your logo from here   ============ -->
+                    <img src="Content/images/logo-v-light.png" class="img-fluid logo-lg" width="140" alt="logo">
+                    <span class="badge bg-light-success rounded-pill ms-2 theme-version">v1.0</span>
+                </div>
+                <div class="navbar-content">
+                    <div class="card pc-user-card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-shrink-0">
+                                    <img src="Content/images/user/avatar-1.jpg" alt="user-image" class="user-avtar wid-45 rounded-circle" />
+                                </div>
+                                <div class="flex-grow-1 ms-3 me-2">
+                                    <h6 class="mb-0">Logged-In</h6>
+                                    <small style="text-transform: capitalize"><%= Session["Username"] %></small>
+                                </div>
+                                <a class="btn btn-icon btn-link-secondary avtar" data-bs-toggle="collapse" href="#pc_sidebar_userlink">
+                                    <svg class="pc-icon">
+                                        <use xlink:href="#custom-sort-outline"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="collapse pc-user-links" id="pc_sidebar_userlink">
+                                <div class="pt-3">
+                                    <a href="#!">
+                                        <i class="ti ti-user"></i>
+                                        <span>My Account</span>
+                                    </a>
+                                    <a href="#!">
+                                        <i class="ti ti-settings"></i>
+                                        <span>Settings</span>
+                                    </a>
+                                    <a href="#!">
+                                        <i class="ti ti-lock"></i>
+                                        <span>Lock Screen</span>
+                                    </a>
+                                    <a href="Login.aspx">
+                                        <i class="ti ti-power"></i>
+                                        <span>Logout</span>
+
+                                        <use xlink:href="#custom-logout"></use>
+
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="pc-navbar" id="sidebar">
+                        <li class="pc-item">
+                            <a href="Dashboard.aspx" class="pc-link">
+                                <span class="pc-micon">
+                                    <svg class="pc-icon">
+                                        <use xlink:href="#custom-status-up"></use>
+                                    </svg>
+                                </span>
+                                <span class="pc-mtext">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="pc-item">
+                            <a href="KYC.aspx" class="pc-link">
+                                <span class="pc-micon">
+                                    <svg class="pc-icon">
+                                        <use xlink:href="#custom-document-filter"></use>
+                                    </svg>
+                                </span>
+                                <span class="pc-mtext">KYC  &nbsp;<span class="badge bg-primary-t">Pending</span></span>
+                            </a>
+                        </li>
+                        <li class="pc-item">
+                            <a href="https://academy.tradiix.com/" target="_blank" class="pc-link d-flex align-items-center">
+                                <span class="pc-micon">
+                                    <svg class="pc-icon">
+                                        <use xlink:href="#custom-password-check"></use>
+                                    </svg>
+                                </span>
+                                <span class="pc-mtext">Academy Portal </span>
+                            </a>
+                        </li>
+                        <li class="pc-item">
+                            <%--<a href="Bonus.aspx" class="pc-link">--%>
+                            <a href="Wallets.aspx" class="pc-link">
+                                <span class="pc-micon">
+                                    <svg class="pc-icon">
+                                        <use xlink:href="#custom-keyboard"></use>
+                                    </svg>
+                                </span>
+                                <span class="pc-mtext">Wallets</span>
+                            </a>
+                        </li>
+                        <li class="pc-item">
+                            <a href="Memberships.aspx" class="pc-link">
+                                <span class="pc-micon">
+                                    <svg class="pc-icon">
+                                        <use xlink:href="#custom-user-add"></use>
+                                    </svg>
+                                </span>
+                                <span class="pc-mtext">Products & Services</span>
+                            </a>
+                        </li>
+                        <li class="pc-item">
+                            <%--<a href="Bonus.aspx" class="pc-link">--%>
+                            <a href="Networks.aspx" class="pc-link">
+                                <span class="pc-micon">
+                                    <svg class="pc-icon">
+                                        <use xlink:href="#custom-share-bold"></use>
+                                    </svg>
+                                </span>
+                                <span class="pc-mtext">Networks / Partners</span>
+                            </a>
+                        </li>
+                        <li class="pc-item">
+                            <a href="Bonuses.aspx" class="pc-link">
+                                <span class="pc-micon">
+                                    <svg class="pc-icon">
+                                        <use xlink:href="#custom-dollar-square"></use>
+                                    </svg>
+                                </span>
+                                <span class="pc-mtext">Bonuses / Team-Bonuses</span>
+                            </a>
+                        </li>
+                        <li class="pc-item">
+                            <a href="RanksRewards.aspx" class="pc-link">
+                                <span class="pc-micon">
+                                    <svg class="pc-icon">
+                                        <use xlink:href="#custom-star-bold"></use>
+                                    </svg>
+                                </span>
+                                <span class="pc-mtext">Ranks & Rewards</span>
+                            </a>
+                        </li>
+
+                              <li id="AIcopyTradingLi" runat="server" class="pc-item">
+                <a id="AIcopyTradingLink" runat="server" href="#" class="pc-link" onclick="handleClick(); return false;">
+                    <span class="pc-micon">
+                        <svg class="pc-icon">
+                            <use xlink:href="#custom-presentation-chart"></use>
+                        </svg>
+                    </span>
+                    <span class="pc-mtext">AI Copy Trading</span>&nbsp;<span id="comingsoonspan" runat="server" class="badge bg-primary-t">On Purchase</span>
+                </a>
+            </li>
+                        <li class="pc-item">
+                            <a href="#submenu1" data-bs-toggle="collapse" class="pc-link">
+                                <span class="pc-micon">
+                                    <svg class="pc-icon">
+                                        <use xlink:href="#custom-shapes"></use>
+                                    </svg>
+                                </span>
+                                <span class="pc-mtext" title="Recommended Brokers">FX Brokers</span>&nbsp;<span class="badge bg-primary-t">Coming Soon</span>
+                                <i data-feather="chevron-down"></i>
+                            </a>
+                           <!-- <ul class="collapse nav flex-column ms-1 submenu" id="submenu1" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a href="#" class="pc-mtext nav-link px-0">Broker 1 </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="pc-mtext nav-link px-0">Broker 2 </a>
+                                </li>
+                            </ul>-->
+                        </li>
+                        <li class="pc-item">
+                            <a href="Transactions.aspx" class="pc-link">
+                                <span class="pc-micon">
+                                    <svg class="pc-icon">
+                                        <use xlink:href="#custom-presentation-chart"></use>
+                                    </svg>
+                                </span>
+                                <span class="pc-mtext">Transactions</span>
+                            </a>
+                        </li>
+                        <li class="pc-item">
+                            <%--<a href="Bonus.aspx" class="pc-link">--%>
+                            <a href="#" class="pc-link">
+                                <span class="pc-micon">
+                                    <svg class="pc-icon">
+                                        <use xlink:href="#custom-direct-inbox"></use>
+                                    </svg>
+                                </span>
+                                <span class="pc-mtext">Tools  &nbsp;<span class="badge bg-primary-t">Coming Soon</span></span>
+                            </a>
+                        </li>
+                        <li class="pc-item">
+                            <%--<a href="Support.aspx" class="pc-link">--%>
+                            <a href="Tickets.aspx" class="pc-link">
+                                <span class="pc-micon">
+                                    <svg class="pc-icon">
+                                        <use xlink:href="#custom-message-2"></use>
+                                    </svg>
+                                </span>
+                                <span class="pc-mtext">Support Tickets</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- [ Sidebar Menu ] end -->
+        <div class="body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <uc1:MemberTopUp runat="server" ID="MemberTopUp" />
+
+        <div class="modal fade modal-animate anim-blur" id="membershipExpiryeModal" tabindex="-1" aria-labelledby="membershipExpiryeModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" style="color: #000 !important;">
+                    <div class="modal-header">
+                        <h1 class="modal-title font-bold fs-4" id="membershipExpiryeModalLabel">Membership Expired</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="bodyMessage"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <%--<button type="button" class="btn btn-default" data-bs-dismiss="modal" onclick="Close();">Close</button>--%>
+                        <asp:Button ID="Close" runat="server" Text="Close" CssClass="btn btn-secondary" OnClick="Close_Click" CausesValidation="false" />
+                        <asp:Button ID="Renew" runat="server" Text="Renew Membership" CssClass="btn btn-primary" OnClick="Renew_Click" CausesValidation="false" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/Scripts/popper.min.js") %>
+        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+        <%: Scripts.Render("~/Scripts/dashboard-default.js") %>
+        <%: Scripts.Render("~/Scripts/apexcharts.min.js") %>
+        <%: Scripts.Render("~/Scripts/simplebar.min.js") %>
+        <%: Scripts.Render("~/Scripts/custom-font.js") %>
+        <%: Scripts.Render("~/Scripts/pcoded.js") %>
+        <%: Scripts.Render("~/Scripts/feather.min.js") %>
+        <%: Scripts.Render("~/Scripts/site.js") %>
+        <script>layout_change('light');</script>
+
+        <script>layout_theme_contrast_change('false');</script>
+
+        <script>change_box_container('false');</script>
+
+        <script>layout_caption_change('true');</script>
+
+        <script>layout_rtl_change('false');</script>
+
+        <script>preset_change("preset-1");</script>
+
+
+    </asp:PlaceHolder>
+
+    <!-- Modal -->
+
+</body>
+</html>

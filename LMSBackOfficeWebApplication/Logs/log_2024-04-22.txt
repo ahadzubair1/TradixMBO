@@ -1,0 +1,15 @@
+
+ ************* 2024-04-22 17:43:12,483 [6] INFO LMSBackOfficeDAL.WriteLog **************  
+ logged in as Admin 
+ 
+ ************* 2024-04-22 17:43:12,492 [6] INFO InfoLog **************  
+ logged in as Admin 
+ 
+ ************* 2024-04-22 17:43:12,577 [6] ERROR LMSBackOfficeDAL.WriteLog **************  
+ System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMSBackOfficeWebApplication.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\ahad_\Downloads\LMSBackOffice-main_19April2024\LMSBackOfficeWebApplication\Login.aspx.cs:line 66 
+ 

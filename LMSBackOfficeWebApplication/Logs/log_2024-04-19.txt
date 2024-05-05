@@ -1,0 +1,43 @@
+
+ ************* 2024-04-19 16:35:43,505 [6] INFO LMSBackOfficeDAL.WriteLog **************  
+ logged in as Admin 
+ 
+ ************* 2024-04-19 16:35:43,523 [6] INFO InfoLog **************  
+ logged in as Admin 
+ 
+ ************* 2024-04-19 16:35:43,615 [6] ERROR LMSBackOfficeDAL.WriteLog **************  
+ System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMSBackOfficeWebApplication.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\ahad_\Downloads\LMSBackOffice-main_19April2024\LMSBackOfficeWebApplication\Login.aspx.cs:line 66 
+ 
+ ************* 2024-04-19 16:45:44,961 [11] INFO LMSBackOfficeDAL.WriteLog **************  
+ logged in as Admin 
+ 
+ ************* 2024-04-19 16:45:44,982 [11] INFO InfoLog **************  
+ logged in as Admin 
+ 
+ ************* 2024-04-19 16:45:45,039 [11] ERROR LMSBackOfficeDAL.WriteLog **************  
+ System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMSBackOfficeWebApplication.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\ahad_\Downloads\LMSBackOffice-main_19April2024\LMSBackOfficeWebApplication\Login.aspx.cs:line 66 
+ 
+ ************* 2024-04-19 17:33:14,021 [83] INFO LMSBackOfficeDAL.WriteLog **************  
+ logged in as Admin 
+ 
+ ************* 2024-04-19 17:33:14,021 [83] INFO InfoLog **************  
+ logged in as Admin 
+ 
+ ************* 2024-04-19 17:33:14,066 [83] ERROR LMSBackOfficeDAL.WriteLog **************  
+ System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at LMSBackOfficeWebApplication.Login.btnLogin_Click(Object sender, EventArgs e) in C:\Users\ahad_\Downloads\LMSBackOffice-main_19April2024\LMSBackOfficeWebApplication\Login.aspx.cs:line 66 
+ 

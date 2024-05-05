@@ -1,0 +1,558 @@
+html {
+  scroll-behavior: smooth;
+}
+body{
+  font-family: 'Gotham';
+  position: relative;
+  font-size: 14px;
+  background-color: #0E1116;
+  font-weight: 400;
+}
+.text-left{
+  text-align: left;
+}
+.toggle-password {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 30px;
+}
+.input-group > input {
+    border-radius: .25rem !important;
+}
+
+    .toggle-password i {
+        font-size: 18px;
+    }
+
+/* Example using Font Awesome for eye icons */
+.fa-eye:before {
+    content: "\f06e";
+}
+
+.fa-eye-slash:before {
+    content: "\f070";
+}
+.v-header{
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 22;
+}
+
+.v-header .header-nav ul li{
+  list-style-type: none;
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+.v-header .header-nav ul li a{
+  color: #fff;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-weight: 500;
+  transition: all ease 0.3s;
+  display: inline-block;
+}
+.btn{
+  font-weight: 500;
+}
+.v-header .header-nav ul li a:hover{
+  color: #E012EE;
+}
+.btn-primary{
+  background-color: #E012EE;
+}
+.border-primary{
+  border: 2px solid #E012EE !important;
+}
+.btn-outline-primary:hover{
+  background-color: #E012EE;
+}
+.btn-primary:hover{
+  background-color: transparent;
+  color: #fff;
+}
+.btn-white{
+  background-color: #fff;
+  color: #0E1116;
+}
+.btn-white:hover{
+  background-color: #E012EE;
+  color: #fff;
+}
+.btn-white:hover i{
+  color: #fff;
+}
+.gradbox{
+  background-image: url(../img/cardbg.png);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 0 20px 5px #00000030;
+  text-align: center;
+  padding: 5px;
+  color: #fff;
+}
+.gradbox img{
+  border-radius: 32px 32px 0 0;
+  margin-bottom: 1rem;
+}
+.playbox{
+  border: 2px solid #E012EE;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+.playbox img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.playbox .overlay{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  transition: all ease 0.3s;
+}
+.playbox .overlay:hover{
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+}
+.playbox .overlay i{
+  font-size: 40px;
+  transition: all ease 0.3s;
+}
+
+.playbox .overlay:hover i:before{
+  color: #fff;
+}
+.playbox .overlay p{
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all ease 0.3s;
+}
+.playbox .overlay:hover p{
+  margin-bottom: 0;
+  opacity: 1;
+  transform: translateY(0);
+  text-align: center;
+}
+.asgrid{
+  border: 2px solid #E012EE;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  padding: 3rem;
+  color: #fff;
+  transition: all ease 0.3s;
+  background-color: #232f457d;
+}
+.asgrid:hover{
+  color: #fff;
+  background-color: #E012EE;
+}
+.asgrid i{
+  font-size: 3rem;
+  transition: all cubic-bezier(.68,0,.37,1.44) 0.3s;
+}
+.asgrid:hover i{
+  color: #fff;
+  transform: scale(1.3) translateY(-5px);
+}
+.asgrid:hover i:before{
+  color: #fff;
+}
+.brbox{
+  background-position: center center;
+  background-size: cover;
+  overflow: hidden;
+  border-radius: 30px;
+  color: #fff;
+  padding: 4rem;
+  text-align: center;
+  border: 2px solid #E012EE;
+  display: flex;
+  align-items: center;
+}
+.brbox.one{
+  background-image: url(../img/rct-1.png);
+}
+.brbox.two{
+  background-image: url(../img/rct-2.png);
+}
+.brbox h3{
+  transition: all cubic-bezier(.68,0,.37,1.44) 0.3s;
+  background: #ffffff24;
+  padding: 20px;
+  border-radius: 20px;
+}
+.brbox:hover h3{
+  transform: scale(0.8);
+}
+#master-head{
+  background-image: url(../img/masterhead-bg.png);
+  background-size: cover;
+  background-position: center center;
+  padding-top: 7rem;
+}
+.lmbox{
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: column;
+}
+.lmbox i{
+  font-size: 40px;
+}
+.lmbox i:before{
+  color: #e012ee;
+}
+.vcircles{
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  perspective-origin: center center;
+}
+.vcircles .circle-1,
+.vcircles .circle-2,
+.vcircles .circle-3{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: transparent;
+  border-radius: 100%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  margin: 0 auto;
+  background-size: 100%;
+}
+.vcircles .circle-1{
+  background-image: url(../img/forex-circle.svg);
+  height: 600px;
+  width: 600px;
+  animation: rotateCircle 10s linear infinite;
+  animation-delay: 0.4s;
+}
+.vcircles .circle-2{
+  background-image: url(../img/crypto-circle.svg);
+  height: 550px;
+  width: 550px;
+  animation: rotateCircle 10s linear infinite;
+  animation-delay: 2s;
+}
+.vcircles .circle-3{
+  background-image: url(../img/stock-market.svg);
+  height: 520px;
+  width: 520px;
+  animation: rotateCircle 10s linear infinite forwards;
+  animation-delay: 1s;
+}
+@keyframes rotateCircle {
+  0%, 100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+}
+
+.course-grid{
+  border-radius: 30px;
+  padding: 15px 15px 20px 15px;
+  color: #fff;
+  border: 2px solid #E012EE;
+  background: #232f457d;
+  height: 100%;
+  transition: all cubic-bezier(.68,0,.37,1.44) 0.3s;
+}
+.course-grid:hover{
+  background: transparent;
+}
+.course-grid:hover .btn{
+  background: #E012EE;
+  color: #fff;
+}
+.course-grid img{
+  border-radius: 10px;
+  height: 210px;
+  width: 100%;
+  object-fit: cover;
+}
+.course-grid-more{
+  background-color: #802FB0;
+  background-image: url(../img/background-sublime.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  border-radius: 30px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  color: #fff;
+  text-align: center;
+}
+.student-grid{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.student-grid img{
+  margin: 0 -30px;
+  transition: all ease 0.4s;
+}
+.student-grid:hover img{
+  margin: 0 0;
+}
+#v-educators{
+  background-image: url(../img/sublime-lg.svg);
+  background-position: center center;
+  background-size: cover;
+  animation: bgmove 20s linear infinite;
+}
+#v-educators .educator-info .name{
+  font-size: 20px;
+  line-height: 1;
+}
+#v-educators .educator-info p{
+  margin: revert;
+}
+.educator-grid{
+  color: #fff;
+  background-color: #802FB0;
+  border-radius: 30px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.educator-grid img{
+  max-height: 200px;
+  overflow: hidden;
+  object-fit: cover;
+}
+#v-educators .carousel-control-prev{
+  left: -110px;
+}
+#v-educators .carousel-control-next{
+  right: -110px;
+}
+#v-fundamentals{
+  background-image: url(../img/bg-glow.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 90vh 80%;
+}
+#v-fundamentals .fbox{
+  border-radius: 20px;
+  border: 2px solid #E012EE;
+  overflow: hidden;
+  padding: 15px;
+  color: #fff;
+  background-image: url(../img/bg-gradient.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all ease 0.4s;
+}
+#v-fundamentals .fbox:hover{
+  transform: translateY(-20px);
+}
+#v-fundamentals .fbox img{
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+.webinar-box{
+  background-image: url(../img/webinar.png);
+  background-size: cover;
+  border: 2px solid #E012EE;
+  border-radius: 30px;
+  padding: 10rem;
+}
+.webinar-box .blurred-bg{
+  background: #ffffff21;
+  padding: 2rem;
+  border-radius: 30px;
+}
+.footer-wrapper{
+  background-image: url(../img/sublime-footer.svg);
+  background-color: #802FB0;
+  border-radius: 30px;
+  text-align: center;
+  color: #fff;
+  padding: 3rem;
+  animation: bgmove 20s linear infinite;
+}
+.footer-wrapper .socialinks{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  gap: 20px;
+}
+@keyframes bgmove {
+  0%, 100% {
+    background-position: left;
+  }
+  50% {
+    background-position: top;
+  }
+}
+.footer-wrapper .socialinks a{
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  transition: all cubic-bezier(.68,0,.37,1.44) 0.3s;
+}
+.footer-wrapper .socialinks a:hover{
+  transform: scale(1.4);
+}
+#v-blogs{
+  background-image: url(../img/bg-glow.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 80%;
+}
+#v-course-list{
+  background-image: url(../img/bg-glow.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+}
+#v-howto{
+  background-image: url(../img/bg-glow.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 90vh 80%;
+}
+.modal-content{
+  color: #fff;
+  border: 1px solid #ffffff59;
+  background-color: #000000b0;
+}
+#blog-section{
+  padding-top: 9rem;
+}
+marquee{
+  position: fixed;
+  top: 80px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 21;
+  font-size: 12px;
+}
+@media only screen and (max-width: 767px) {
+    .brbox{
+        height: auto !important;
+    }
+    marquee {
+        top: 140px;
+    }
+  .btn{
+    font-size: 14px;
+  }
+  #v-howto, #v-blogs, #v-course-list, #v-fundamentals{
+    background-size: auto;
+    background-position: 20% center;
+  }
+  #earn-box{
+    overflow: hidden;
+  }
+  .brbox{
+    padding: 4rem 2rem;
+  }
+  .webinar-box{
+    padding: 1rem;
+  }
+  .captionbox{
+    padding-right: 0;
+  }
+  .asgrid, .brbox, .course-grid, .educator-grid, #v-fundamentals .fbox{
+    margin-bottom: 2rem;
+  }
+  .course-grid-more{
+    background-size: 100%;
+    padding: 6rem 0;
+  }
+  .educator-grid{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  #v-educators .carousel-control-prev{
+    left: 0;
+    top: -40px;
+    align-items: flex-start;
+  }
+  #v-educators .carousel-control-next{
+    right: 0;
+    top: -40px;
+    align-items: flex-start;
+  }
+  #v-educators{
+    animation: none;
+  }
+  .student-grid img{
+    max-width: 100px;
+  }
+  .v-header .header-nav ul li{
+    display: block;
+    margin: 1rem;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .webinar-box{
+    padding: 3rem;
+  }
+  .captionbox{
+    padding-right: 0;
+  }
+  .brbox{
+    padding: 1rem;
+  }
+  .fbox{
+    margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .v-header .header-nav{
+    margin: 0 0.6rem;
+  }
+  .v-header .header-nav ul li a{
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  /* Styles for extra-large screens */
+}

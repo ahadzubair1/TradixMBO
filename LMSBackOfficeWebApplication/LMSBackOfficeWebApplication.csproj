@@ -1,0 +1,926 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DE1B270B-9F27-43C1-8C6A-A58227C20F96}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LMSBackOfficeWebApplication</RootNamespace>
+    <AssemblyName>LMSBackOfficeWebApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44398</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.102.2.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.102.2\lib\netstandard2.0\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.16.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.16.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="Irony, Version=1.0.11.0, Culture=neutral, PublicKeyToken=ca48ace7223ead47, processorArchitecture=MSIL">
+      <HintPath>..\packages\Irony.NetCore.1.0.11\lib\net461\Irony.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.16.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.16\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.8.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="MSCaptcha, Version=4.0.4250.31585, Culture=neutral, PublicKeyToken=b9ff12f28cdcf412, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\MSCaptcha.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack, Version=6.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.8.2.2\lib\net472\ServiceStack.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Client, Version=6.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Client.8.2.2\lib\net472\ServiceStack.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Common.8.2.2\lib\net472\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Interfaces.8.2.2\lib\net472\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=6.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Text.8.2.2\lib\net472\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.Fonts.1.0.0\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.0\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.6.0.0\lib\net461\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.RegularExpressions.4.3.1\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.4.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="XLParser, Version=1.5.2.0, Culture=neutral, PublicKeyToken=63397e1e46bb91b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\XLParser.1.5.2\lib\net461\XLParser.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Bonuses.aspx" />
+    <Content Include="CancelTransaction.aspx" />
+    <Content Include="Checkout.aspx" />
+    <Content Include="CoinPaymentSuccess.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\css\bootstrap-grid.css" />
+    <Content Include="Content\css\bootstrap-grid.min.css" />
+    <Content Include="Content\css\bootstrap-grid.rtl.css" />
+    <Content Include="Content\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\css\bootstrap-reboot.css" />
+    <Content Include="Content\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\css\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\css\bootstrap-utilities.css" />
+    <Content Include="Content\css\bootstrap-utilities.min.css" />
+    <Content Include="Content\css\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap.rtl.css" />
+    <Content Include="Content\css\bootstrap.rtl.min.css" />
+    <Content Include="Content\css\dataTables.bootstrap5.min.css" />
+    <Content Include="Content\css\dropzone.min.css" />
+    <Content Include="Content\css\icons.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\typography.css" />
+    <Content Include="Content\feather.css" />
+    <Content Include="Content\fontawesome.css" />
+    <Content Include="Content\fonts\feather.css" />
+    <Content Include="Content\fonts\feather\feathere8ab.svg" />
+    <Content Include="Content\fonts\fontawesome.css" />
+    <Content Include="Content\fonts\fontawesome\fa-brands-400.svg" />
+    <Content Include="Content\fonts\fontawesome\fa-regular-400.svg" />
+    <Content Include="Content\fonts\fontawesome\fa-solid-900.svg" />
+    <Content Include="Content\fonts\icomoon.svg" />
+    <Content Include="Content\fonts\inter\inter.css" />
+    <Content Include="Content\fonts\material.css" />
+    <Content Include="Content\fonts\phosphor\duotone\Phosphor-Duotone.svg" />
+    <Content Include="Content\fonts\phosphor\duotone\style.css" />
+    <Content Include="Content\fonts\tabler-icons.min.css" />
+    <Content Include="Content\fonts\tabler\tabler-icons.svg" />
+    <Content Include="Content\images\7.png" />
+    <Content Include="Content\images\74bfa33cdc60f1991bff9c8c91b566cf.png" />
+    <Content Include="Content\images\application\img-cal-bg.jpg" />
+    <Content Include="Content\images\articles.png" />
+    <Content Include="Content\images\authentication\img-auth-bg.jpg" />
+    <Content Include="Content\images\Autumn-Fall-Leaves-Clip-Art-PNG.png" />
+    <Content Include="Content\images\Autumn-Fall-Leaves-Pictures-Collage-PNG.png" />
+    <Content Include="Content\images\ba6f6fd07961c104f091238cd53c9cf0.png" />
+    <Content Include="Content\images\background-sublime.png" />
+    <Content Include="Content\images\bg-glow.svg" />
+    <Content Include="Content\images\bg-gradient.png" />
+    <Content Include="Content\images\big-money.png" />
+    <Content Include="Content\images\bodybg.jpg" />
+    <Content Include="Content\images\c5048531a4f3b6509542ac2b0aee71e8.png" />
+    <Content Include="Content\images\cardbg.png" />
+    <Content Include="Content\images\Copy-Trading\Elite-EA.png" />
+    <Content Include="Content\images\Copy-Trading\Explorer-EA.png" />
+    <Content Include="Content\images\Copy-Trading\Infinite-EA.png" />
+    <Content Include="Content\images\Copy-Trading\Pioneer-EA.png" />
+    <Content Include="Content\images\crypto-circle.svg" />
+    <Content Include="Content\images\crypto-decryption.png" />
+    <Content Include="Content\images\d723f859f444d4f8bf2720057554ff35.png" />
+    <Content Include="Content\images\Fall-Autumn-Leaves-Transparent-PNG.png" />
+    <Content Include="Content\images\finance.png" />
+    <Content Include="Content\images\financially-fit-for-life.png" />
+    <Content Include="Content\images\fire-lit.gif" />
+    <Content Include="Content\images\forex-circle.svg" />
+    <Content Include="Content\images\Green-Leaves-PNG-File.png" />
+    <Content Include="Content\images\Kwame-Opoku.png" />
+    <Content Include="Content\images\kyc\avatar.png" />
+    <Content Include="Content\images\kyc\license.png" />
+    <Content Include="Content\images\kyc\nic.png" />
+    <Content Include="Content\images\kyc\passport.png" />
+    <Content Include="Content\images\kyc\profile-avatar.png" />
+    <Content Include="Content\images\kyc\uae.png" />
+    <Content Include="Content\images\layout\img-announcement-1.png" />
+    <Content Include="Content\images\layout\img-announcement-2.png" />
+    <Content Include="Content\images\layout\img-announcement-3.png" />
+    <Content Include="Content\images\layout\img-announcement-4.png" />
+    <Content Include="Content\images\layout\img-profile-card.jpg" />
+    <Content Include="Content\images\Levyn-Cornu.png" />
+    <Content Include="Content\images\logo-v-dark.png" />
+    <Content Include="Content\images\logo-v-light.png" />
+    <Content Include="Content\images\masterhead-bg.png" />
+    <Content Include="Content\images\Memberships\1.png" />
+    <Content Include="Content\images\Memberships\2.png" />
+    <Content Include="Content\images\Memberships\3.png" />
+    <Content Include="Content\images\Memberships\4.png" />
+    <Content Include="Content\images\Memberships\5.png" />
+    <Content Include="Content\images\Memberships\6.png" />
+    <Content Include="Content\images\Nathan-Williams.png" />
+    <Content Include="Content\images\nft-blog.png" />
+    <Content Include="Content\images\Nickolas-Leonida.png" />
+    <Content Include="Content\images\pages\img-cunstruct-1-bg.png" />
+    <Content Include="Content\images\Ranks\current-rank.gif" />
+    <Content Include="Content\images\Ranks\RANK-01.png" />
+    <Content Include="Content\images\Ranks\RANK-02.png" />
+    <Content Include="Content\images\Ranks\RANK-03.png" />
+    <Content Include="Content\images\Ranks\RANK-04.png" />
+    <Content Include="Content\images\Ranks\RANK-05.png" />
+    <Content Include="Content\images\Ranks\RANK-06.png" />
+    <Content Include="Content\images\Ranks\RANK-07.png" />
+    <Content Include="Content\images\Ranks\RANK-08.png" />
+    <Content Include="Content\images\rct-1.png" />
+    <Content Include="Content\images\rct-2.png" />
+    <Content Include="Content\images\Realistic-Autumn-Fall-Leaves-PNG.png" />
+    <Content Include="Content\images\smart-money.png" />
+    <Content Include="Content\images\Steven-Down.png" />
+    <Content Include="Content\images\stock-market.svg" />
+    <Content Include="Content\images\student-1.png" />
+    <Content Include="Content\images\student-2.png" />
+    <Content Include="Content\images\student-3.png" />
+    <Content Include="Content\images\student-4.png" />
+    <Content Include="Content\images\student-5.png" />
+    <Content Include="Content\images\student-6.png" />
+    <Content Include="Content\images\sublime-footer.svg" />
+    <Content Include="Content\images\sublime-lg.svg" />
+    <Content Include="Content\images\success.gif" />
+    <Content Include="Content\images\tradiix-logo.png" />
+    <Content Include="Content\images\Transparent-Autumn-Leaves-Falling-PNG.png" />
+    <Content Include="Content\images\unlock-ichimoku.png" />
+    <Content Include="Content\images\user\avatar-1.jpg" />
+    <Content Include="Content\images\user\avatar-2.jpg" />
+    <Content Include="Content\images\user\avatar-3.jpg" />
+    <Content Include="Content\images\user\avatar-4.jpg" />
+    <Content Include="Content\images\user\avatar-5.jpg" />
+    <Content Include="Content\images\wave.svg" />
+    <Content Include="Content\images\webinar.png" />
+    <Content Include="Content\images\widget\img-gpay.png" />
+    <Content Include="Content\images\widget\img-paypal.png" />
+    <Content Include="Content\images\widget\img-phonepay.png" />
+    <Content Include="Content\material.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\style-preset.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\tabler-icons.min.css" />
+    <Content Include="css\bootstrap-grid.css" />
+    <Content Include="css\bootstrap-grid.min.css" />
+    <Content Include="css\bootstrap-grid.rtl.css" />
+    <Content Include="css\bootstrap-grid.rtl.min.css" />
+    <Content Include="css\bootstrap-reboot.css" />
+    <Content Include="css\bootstrap-reboot.min.css" />
+    <Content Include="css\bootstrap-reboot.rtl.css" />
+    <Content Include="css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="css\bootstrap-utilities.css" />
+    <Content Include="css\bootstrap-utilities.min.css" />
+    <Content Include="css\bootstrap-utilities.rtl.css" />
+    <Content Include="css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\bootstrap.rtl.css" />
+    <Content Include="css\bootstrap.rtl.min.css" />
+    <Content Include="css\icons.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\typography.css" />
+    <Content Include="ExternalLib\log4net.dll" />
+    <Content Include="fonts\icomoon.svg" />
+    <Content Include="ResetPassword.aspx" />
+    <Content Include="ForgotPassword.aspx" />
+    <Content Include="img\7.png" />
+    <Content Include="img\74bfa33cdc60f1991bff9c8c91b566cf.png" />
+    <Content Include="img\articles.png" />
+    <Content Include="img\ba6f6fd07961c104f091238cd53c9cf0.png" />
+    <Content Include="img\background-sublime.png" />
+    <Content Include="img\bg-glow.svg" />
+    <Content Include="img\bg-gradient.png" />
+    <Content Include="img\big-money.png" />
+    <Content Include="img\c5048531a4f3b6509542ac2b0aee71e8.png" />
+    <Content Include="img\cardbg.png" />
+    <Content Include="img\crypto-circle.svg" />
+    <Content Include="img\crypto-decryption.png" />
+    <Content Include="img\d723f859f444d4f8bf2720057554ff35.png" />
+    <Content Include="img\finance.png" />
+    <Content Include="img\financially-fit-for-life.png" />
+    <Content Include="img\forex-circle.svg" />
+    <Content Include="img\Kwame-Opoku.png" />
+    <Content Include="img\Levyn-Cornu.png" />
+    <Content Include="img\masterhead-bg.png" />
+    <Content Include="img\Nathan-Williams.png" />
+    <Content Include="img\nft-blog.png" />
+    <Content Include="img\Nickolas-Leonida.png" />
+    <Content Include="img\rct-1.png" />
+    <Content Include="img\rct-2.png" />
+    <Content Include="img\smart-money.png" />
+    <Content Include="img\Spinner.png" />
+    <Content Include="img\Steven-Down.png" />
+    <Content Include="img\stock-market.svg" />
+    <Content Include="img\student-1.png" />
+    <Content Include="img\student-2.png" />
+    <Content Include="img\student-3.png" />
+    <Content Include="img\student-4.png" />
+    <Content Include="img\student-5.png" />
+    <Content Include="img\student-6.png" />
+    <Content Include="img\sublime-footer.svg" />
+    <Content Include="img\sublime-lg.svg" />
+    <Content Include="img\tradiix-logo.png" />
+    <Content Include="img\unlock-ichimoku.png" />
+    <Content Include="img\webinar.png" />
+    <Content Include="index.html" />
+    <Content Include="js\bootstrap.bundle.js" />
+    <Content Include="js\bootstrap.bundle.min.js" />
+    <Content Include="js\bootstrap.esm.js" />
+    <Content Include="js\bootstrap.esm.min.js" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\jquery-3.6.0.min.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\script.js" />
+    <Content Include="KYC.aspx" />
+    <Content Include="Dashboard.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Login.aspx" />
+    <Content Include="Memberships.aspx" />
+    <Content Include="MemberTopUp.ascx" />
+    <Content Include="Activation.aspx" />
+    <Content Include="Networks.aspx" />
+    <Content Include="PurchaseResponse.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="Scripts\apexcharts.min.js" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\fonts\feather\feathere8ab.eot" />
+    <Content Include="Content\fonts\feather\feathere8ab.ttf" />
+    <Content Include="Content\fonts\feather\feathere8ab.woff" />
+    <Content Include="Content\fonts\fontawesome\fa-brands-400.eot" />
+    <Content Include="Content\fonts\fontawesome\fa-brands-400.ttf" />
+    <Content Include="Content\fonts\fontawesome\fa-brands-400.woff" />
+    <Content Include="Content\fonts\fontawesome\fa-brands-400.woff2" />
+    <Content Include="Content\fonts\fontawesome\fa-brands-400d41d.eot" />
+    <Content Include="Content\fonts\fontawesome\fa-regular-400.eot" />
+    <Content Include="Content\fonts\fontawesome\fa-regular-400.ttf" />
+    <Content Include="Content\fonts\fontawesome\fa-regular-400.woff" />
+    <Content Include="Content\fonts\fontawesome\fa-regular-400.woff2" />
+    <Content Include="Content\fonts\fontawesome\fa-regular-400d41d.eot" />
+    <Content Include="Content\fonts\fontawesome\fa-solid-900.eot" />
+    <Content Include="Content\fonts\fontawesome\fa-solid-900.ttf" />
+    <Content Include="Content\fonts\fontawesome\fa-solid-900.woff" />
+    <Content Include="Content\fonts\fontawesome\fa-solid-900.woff2" />
+    <Content Include="Content\fonts\fontawesome\fa-solid-900d41d.eot" />
+    <Content Include="Content\fonts\Gotham-Black.woff" />
+    <Content Include="Content\fonts\Gotham-Black.woff2" />
+    <Content Include="Content\fonts\Gotham-Bold.woff" />
+    <Content Include="Content\fonts\Gotham-Bold.woff2" />
+    <Content Include="Content\fonts\Gotham-BoldItalic.woff" />
+    <Content Include="Content\fonts\Gotham-BoldItalic.woff2" />
+    <Content Include="Content\fonts\Gotham-Book.woff" />
+    <Content Include="Content\fonts\Gotham-Book.woff2" />
+    <Content Include="Content\fonts\Gotham-BookItalic.woff" />
+    <Content Include="Content\fonts\Gotham-BookItalic.woff2" />
+    <Content Include="Content\fonts\Gotham-Light.woff" />
+    <Content Include="Content\fonts\Gotham-Light.woff2" />
+    <Content Include="Content\fonts\Gotham-LightItalic.woff" />
+    <Content Include="Content\fonts\Gotham-LightItalic.woff2" />
+    <Content Include="Content\fonts\Gotham-Medium.woff" />
+    <Content Include="Content\fonts\Gotham-Medium.woff2" />
+    <Content Include="Content\fonts\Gotham-Thin.woff" />
+    <Content Include="Content\fonts\Gotham-Thin.woff2" />
+    <Content Include="Content\fonts\Gotham-ThinItalic.woff" />
+    <Content Include="Content\fonts\Gotham-ThinItalic.woff2" />
+    <Content Include="Content\fonts\Gotham-UltraItalic.woff" />
+    <Content Include="Content\fonts\Gotham-UltraItalic.woff2" />
+    <Content Include="Content\fonts\Gotham-XLight.woff" />
+    <Content Include="Content\fonts\Gotham-XLight.woff2" />
+    <Content Include="Content\fonts\Gotham-XLightItalic.woff" />
+    <Content Include="Content\fonts\Gotham-XLightItalic.woff2" />
+    <Content Include="Content\fonts\icomoon.eot" />
+    <Content Include="Content\fonts\icomoon.ttf" />
+    <Content Include="Content\fonts\icomoon.woff" />
+    <Content Include="Content\fonts\inter\Inter-italic.var32a8.woff2" />
+    <Content Include="Content\fonts\inter\Inter-roman.var32a8.woff2" />
+    <Content Include="Content\fonts\material\material.woff2" />
+    <Content Include="Content\fonts\phosphor\duotone\Phosphor-Duotone.ttf" />
+    <Content Include="Content\fonts\phosphor\duotone\Phosphor-Duotone.woff" />
+    <Content Include="Content\fonts\tabler\tabler-icons.eot" />
+    <Content Include="Content\fonts\tabler\tabler-icons.ttf" />
+    <Content Include="Content\fonts\tabler\tabler-icons.woff" />
+    <Content Include="Content\fonts\tabler\tabler-icons.woff2" />
+    <Content Include="Content\fonts\tabler\tabler-iconsd41d.eot" />
+    <Content Include="Content\css\bootstrap-grid.css.map" />
+    <Content Include="Content\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\css\bootstrap-utilities.css.map" />
+    <Content Include="Content\css\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\css\bootstrap.css.map" />
+    <Content Include="Content\css\bootstrap.min.css.map" />
+    <Content Include="Content\css\bootstrap.rtl.css.map" />
+    <Content Include="Content\css\bootstrap.rtl.min.css.map" />
+    <Content Include="AIcopyTrading.aspx" />
+    <Content Include="RanksRewards.aspx" />
+    <Content Include="Scripts\dataTables.bootstrap5.min.css" />
+    <Content Include="Scripts\dataTables.min.js" />
+    <Content Include="SuccessHandler.aspx" />
+    <Content Include="Tickets.aspx" />
+    <Content Include="Transactions.aspx" />
+    <Content Include="Wallets.aspx" />
+    <Content Include="css\bootstrap-grid.css.map" />
+    <Content Include="css\bootstrap-grid.min.css.map" />
+    <Content Include="css\bootstrap-grid.rtl.css.map" />
+    <Content Include="css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="css\bootstrap-reboot.css.map" />
+    <Content Include="css\bootstrap-reboot.min.css.map" />
+    <Content Include="css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="css\bootstrap-utilities.css.map" />
+    <Content Include="css\bootstrap-utilities.min.css.map" />
+    <Content Include="css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="css\bootstrap.css.map" />
+    <Content Include="css\bootstrap.min.css.map" />
+    <Content Include="css\bootstrap.rtl.css.map" />
+    <Content Include="css\bootstrap.rtl.min.css.map" />
+    <Content Include="fonts\Gotham-Black.woff" />
+    <Content Include="fonts\Gotham-Black.woff2" />
+    <Content Include="fonts\Gotham-Bold.woff" />
+    <Content Include="fonts\Gotham-Bold.woff2" />
+    <Content Include="fonts\Gotham-BoldItalic.woff" />
+    <Content Include="fonts\Gotham-BoldItalic.woff2" />
+    <Content Include="fonts\Gotham-Book.woff" />
+    <Content Include="fonts\Gotham-Book.woff2" />
+    <Content Include="fonts\Gotham-BookItalic.woff" />
+    <Content Include="fonts\Gotham-BookItalic.woff2" />
+    <Content Include="fonts\Gotham-Light.woff" />
+    <Content Include="fonts\Gotham-Light.woff2" />
+    <Content Include="fonts\Gotham-LightItalic.woff" />
+    <Content Include="fonts\Gotham-LightItalic.woff2" />
+    <Content Include="fonts\Gotham-Medium.woff" />
+    <Content Include="fonts\Gotham-Medium.woff2" />
+    <Content Include="fonts\Gotham-Thin.woff" />
+    <Content Include="fonts\Gotham-Thin.woff2" />
+    <Content Include="fonts\Gotham-ThinItalic.woff" />
+    <Content Include="fonts\Gotham-ThinItalic.woff2" />
+    <Content Include="fonts\Gotham-UltraItalic.woff" />
+    <Content Include="fonts\Gotham-UltraItalic.woff2" />
+    <Content Include="fonts\Gotham-XLight.woff" />
+    <Content Include="fonts\Gotham-XLight.woff2" />
+    <Content Include="fonts\Gotham-XLightItalic.woff" />
+    <Content Include="fonts\Gotham-XLightItalic.woff2" />
+    <Content Include="fonts\icomoon.eot" />
+    <Content Include="fonts\icomoon.ttf" />
+    <Content Include="fonts\icomoon.woff" />
+    <Content Include="js\bootstrap.bundle.js.map" />
+    <Content Include="js\bootstrap.bundle.min.js.map" />
+    <Content Include="js\bootstrap.esm.js.map" />
+    <Content Include="js\bootstrap.esm.min.js.map" />
+    <Content Include="js\bootstrap.js.map" />
+    <Content Include="js\bootstrap.min.js.map" />
+    <Content Include="IpnHandler.ashx" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\custom-font.js" />
+    <Content Include="Scripts\dashboard-default.js" />
+    <Content Include="Scripts\feather.min.js" />
+    <Content Include="Scripts\pcoded.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\simplebar.min.js" />
+    <Content Include="Scripts\site.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Site.Master" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <Content Include="Site.Mobile.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Bonuses.aspx.cs">
+      <DependentUpon>Bonuses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bonuses.aspx.designer.cs">
+      <DependentUpon>Bonuses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CancelTransaction.aspx.cs">
+      <DependentUpon>CancelTransaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CancelTransaction.aspx.designer.cs">
+      <DependentUpon>CancelTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checkout.aspx.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checkout.aspx.designer.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CoinPaymentSuccess.aspx.cs">
+      <DependentUpon>CoinPaymentSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CoinPaymentSuccess.aspx.designer.cs">
+      <DependentUpon>CoinPaymentSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CoinPayment\CoinPaymentService.cs" />
+    <Compile Include="CoinPayment\Ipns\IpnApi.cs" />
+    <Compile Include="CoinPayment\Ipns\IpnBase.cs" />
+    <Compile Include="CoinPayment\Models\CreateTransactionRequest.cs" />
+    <Compile Include="CoinPayment\Models\CreateTransactionResponse.cs" />
+    <Compile Include="CoinPayment\Models\CreateWithdrawalRequest.cs" />
+    <Compile Include="CoinPayment\Models\CreateWithdrawalResponse.cs" />
+    <Compile Include="CoinPayment\Models\GetWithdrawalInfoRequest.cs" />
+    <Compile Include="CoinPayment\Models\GetWithdrawalInfoResponse.cs" />
+    <Compile Include="CoinPayment\Models\HttpUrlRequest.cs" />
+    <Compile Include="CoinPayment\Models\HttpUrlResponse.cs" />
+    <Compile Include="CoinPayment\Models\ResponseModel.cs" />
+    <Compile Include="CoinPayment\Models\ResponseModelFoundation.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IpnHandler.ashx.cs">
+      <DependentUpon>IpnHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="KYC.aspx.cs">
+      <DependentUpon>KYC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KYC.aspx.designer.cs">
+      <DependentUpon>KYC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Memberships.aspx.cs">
+      <DependentUpon>Memberships.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Memberships.aspx.designer.cs">
+      <DependentUpon>Memberships.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MemberTopUp.ascx.cs">
+      <DependentUpon>MemberTopUp.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MemberTopUp.ascx.designer.cs">
+      <DependentUpon>MemberTopUp.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TicketModel.cs" />
+    <Compile Include="Models\TicketVM.cs" />
+    <Compile Include="Networks.aspx.cs">
+      <DependentUpon>Networks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Networks.aspx.designer.cs">
+      <DependentUpon>Networks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Activation.aspx.cs">
+      <DependentUpon>Activation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Activation.aspx.designer.cs">
+      <DependentUpon>Activation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseResponse.aspx.cs">
+      <DependentUpon>PurchaseResponse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PurchaseResponse.aspx.designer.cs">
+      <DependentUpon>PurchaseResponse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SuccessHandler.aspx.cs">
+      <DependentUpon>SuccessHandler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuccessHandler.aspx.designer.cs">
+      <DependentUpon>SuccessHandler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tickets.aspx.cs">
+      <DependentUpon>Tickets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tickets.aspx.designer.cs">
+      <DependentUpon>Tickets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions.aspx.cs">
+      <DependentUpon>Transactions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transactions.aspx.designer.cs">
+      <DependentUpon>Transactions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utitlity\CryptoUtil.cs" />
+    <Compile Include="Utitlity\HttpUrlCaller.cs" />
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AIcopyTrading.aspx.cs">
+      <DependentUpon>AIcopyTrading.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AIcopyTrading.aspx.designer.cs">
+      <DependentUpon>AIcopyTrading.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RanksRewards.aspx.cs">
+      <DependentUpon>RanksRewards.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RanksRewards.aspx.designer.cs">
+      <DependentUpon>RanksRewards.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wallets.aspx.cs">
+      <DependentUpon>Wallets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wallets.aspx.designer.cs">
+      <DependentUpon>Wallets.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LMSBackOfficeDAL\LMSBackOfficeDAL.csproj">
+      <Project>{522ceadd-07e3-4d97-b27b-f0aebe234ceb}</Project>
+      <Name>LMSBackOfficeDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54764</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44398/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

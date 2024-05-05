@@ -1,0 +1,172 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\ahad_\\Downloads\\LMSBackOffice-main_19April2024\\LMSBackOfficeWebApp\\LMSBackOfficeWebApp.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\ahad_\\Downloads\\LMSBackOffice-main_19April2024\\LMSBackOfficeAPI\\LMSBackOfficeAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ahad_\\Downloads\\LMSBackOffice-main_19April2024\\LMSBackOfficeAPI\\LMSBackOfficeAPI.csproj",
+        "projectName": "LMSBackOfficeAPI",
+        "projectPath": "C:\\Users\\ahad_\\Downloads\\LMSBackOffice-main_19April2024\\LMSBackOfficeAPI\\LMSBackOfficeAPI.csproj",
+        "packagesPath": "C:\\Users\\ahad_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ahad_\\Downloads\\LMSBackOffice-main_19April2024\\LMSBackOfficeAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ahad_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\ahad_\\Downloads\\LMSBackOffice-main_19April2024\\LMSBackOfficeDAL\\LMSBackOfficeDAL.csproj": {
+                "projectPath": "C:\\Users\\ahad_\\Downloads\\LMSBackOffice-main_19April2024\\LMSBackOfficeDAL\\LMSBackOfficeDAL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ahad_\\Downloads\\LMSBackOffice-main_19April2024\\LMSBackOfficeDAL\\LMSBackOfficeDAL.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ahad_\\Downloads\\LMSBackOffice-main_19April2024\\LMSBackOfficeDAL\\LMSBackOfficeDAL.csproj",
+        "projectName": "LMSBackOfficeDAL",
+        "projectPath": "C:\\Users\\ahad_\\Downloads\\LMSBackOffice-main_19April2024\\LMSBackOfficeDAL\\LMSBackOfficeDAL.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\ahad_\\Downloads\\LMSBackOffice-main_19April2024\\LMSBackOfficeWebApp\\LMSBackOfficeWebApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ahad_\\Downloads\\LMSBackOffice-main_19April2024\\LMSBackOfficeWebApp\\LMSBackOfficeWebApp.csproj",
+        "projectName": "LMSBackOfficeWebApp",
+        "projectPath": "C:\\Users\\ahad_\\Downloads\\LMSBackOffice-main_19April2024\\LMSBackOfficeWebApp\\LMSBackOfficeWebApp.csproj",
+        "packagesPath": "C:\\Users\\ahad_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ahad_\\Downloads\\LMSBackOffice-main_19April2024\\LMSBackOfficeWebApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ahad_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\ahad_\\Downloads\\LMSBackOffice-main_19April2024\\LMSBackOfficeAPI\\LMSBackOfficeAPI.csproj": {
+                "projectPath": "C:\\Users\\ahad_\\Downloads\\LMSBackOffice-main_19April2024\\LMSBackOfficeAPI\\LMSBackOfficeAPI.csproj"
+              },
+              "C:\\Users\\ahad_\\Downloads\\LMSBackOffice-main_19April2024\\LMSBackOfficeDAL\\LMSBackOfficeDAL.csproj": {
+                "projectPath": "C:\\Users\\ahad_\\Downloads\\LMSBackOffice-main_19April2024\\LMSBackOfficeDAL\\LMSBackOfficeDAL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "NonFactors.Grid.Mvc6": {
+              "target": "Package",
+              "version": "[7.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

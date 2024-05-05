@@ -1,0 +1,55 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = LMSBackOfficeWebApp
+build_property.RootNamespace = LMSBackOfficeWebApp
+build_property.ProjectDir = C:\Users\ahad_\Downloads\LMSBackOffice-main_19April2024\LMSBackOfficeWebApp\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\ahad_\Downloads\LMSBackOffice-main_19April2024\LMSBackOfficeWebApp
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/ahad_/Downloads/LMSBackOffice-main_19April2024/LMSBackOfficeWebApp/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahad_/Downloads/LMSBackOffice-main_19April2024/LMSBackOfficeWebApp/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahad_/Downloads/LMSBackOffice-main_19April2024/LMSBackOfficeWebApp/Pages/MVCGrid/_Grid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTVZDR3JpZFxfR3JpZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahad_/Downloads/LMSBackOffice-main_19April2024/LMSBackOfficeWebApp/Pages/MVCGrid/_Pager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTVZDR3JpZFxfUGFnZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahad_/Downloads/LMSBackOffice-main_19April2024/LMSBackOfficeWebApp/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahad_/Downloads/LMSBackOffice-main_19April2024/LMSBackOfficeWebApp/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahad_/Downloads/LMSBackOffice-main_19April2024/LMSBackOfficeWebApp/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahad_/Downloads/LMSBackOffice-main_19April2024/LMSBackOfficeWebApp/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ahad_/Downloads/LMSBackOffice-main_19April2024/LMSBackOfficeWebApp/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-ynufw96k8v
